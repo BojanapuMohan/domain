@@ -18,6 +18,8 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
+# please set your path
+set :output, "/path/to/my/cron_log.log"
 every 1.minute do
   runner "Newdomain.updaterecords"
 end
