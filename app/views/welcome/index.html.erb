@@ -1,0 +1,81 @@
+
+<% @newdomains.each do |newdomain| %>
+	<%#= newdomain.rank %>
+	<%#= newdomain.created_date %>
+    <!-- <div id="container" style="width:100%; height:400px;" , data: {temp: @newdomains}>
+    </div> -->
+    <%= content_tag :div, id: "container", data: {temp: @newdomains} do%>
+<% end %>
+<% end %>
+
+<script type="text/javascript" charset="utf-8">
+var data1 = $('#container').data('temp');
+console.log(data1);
+var data = [];
+for (var i = 0; i < data1.length; i++) {
+    var domainname = data1[i].domain_name;
+    var tempArray = [];
+        if(data1[i + 1]){
+            if (data1[i + 1].id == data1[i].id) {
+            tempArray[0] = parseInt(data1[i].created_date);
+            tempArray[1] = data1[i].rank;
+            data.push(tempArray);
+            mychartFunction(data, domainname);
+        }else{
+            tempArray[0] = parseInt(data1[i].created_date);
+            tempArray[1] = data1[i].rank;
+           data.push(tempArray); 
+           mychartFunction(data, domainname);
+        }
+    }else{
+        tempArray[0] = parseInt(data1[i].created_date);
+            tempArray[1] = data1[i].rank;
+           data.push(tempArray); 
+           mychartFunction(data, domainname);
+    }
+    
+}
+console.log(data);
+function mychartFunction(data, domainname) {
+     $('#container').highcharts({
+        chart: {
+            type: 'spline'
+        },
+        title: {
+            text: 'Domain'
+        },
+        
+        xAxis: {
+            type: 'datetime',
+            
+            title: {
+                text: 'Date'
+            }
+        },
+        yAxis: {
+            title: {
+                text: 'Rank'
+            },
+            min: 0
+        },
+        tooltip: {
+            headerFormat: '<b>{series.name}</b><br>',
+            pointFormat: '{point.x:%e. %b}: {point.y:.2f} Rank'
+        },
+
+        plotOptions: {
+            spline: {
+                marker: {
+                    enabled: true
+                }
+            }
+        },
+
+        series: [ {
+            name: domainname,
+            data: data
+        }]
+    });          
+}
+
+</script>

@@ -1,0 +1,1 @@
+json.array! @newdomains, partial: 'newdomains/newdomain', as: :newdomain

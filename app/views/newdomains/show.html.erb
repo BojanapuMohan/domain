@@ -1,0 +1,42 @@
+
+
+<!-- <p>
+  <strong>Domain name:</strong>
+  <%= @newdomain.domain_name %>
+</p> -->
+
+<%#= link_to 'Edit', edit_newdomain_path(@newdomain) %> 
+<%#= link_to 'Back', newdomains_path %>
+
+
+<div class="row">
+  <div class="col-lg-6 col-lg-offset-3">
+    <div class="panel panel-default">
+    <div class="panel-heading">Show Domain</div>
+    <div class="panel-body">
+      
+          
+          
+          <div class="form-group row">
+            <label for="inputPassword1" class="col-lg-4 control-label">Domain name:</label>
+            <div class="col-lg-8">
+               <%= @newdomain.domain_name %>
+              
+            </div>
+          </div>
+          
+    </div>
+    
+     <div class="panel-footer">
+      <%#= link_to 'Back', products_path, class:"btn  btn-primary" %>
+      <div class="panel-footer">
+     	<%= link_to 'Back', newdomains_path, class:"btn  btn-primary" %>
+     	<%= link_to 'Edit', edit_newdomain_path(@newdomain),	  class:"btn  btn-primary" %>
+     </div>
+      
+      
+     </div>
+ </div>
+
+  </div>
+</div>

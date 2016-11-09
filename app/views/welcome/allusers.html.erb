@@ -1,0 +1,26 @@
+<div class="row">
+	<% @users.each do |user| %>
+		<div class="panel panel-default">
+  			<div class="panel-body">
+  				<div class="col-lg-2">
+  					<span>First Name</span>
+  				</div>
+  				<div class="col-lg-2">
+  					:<span><%= user.firstname %></span>
+  				</div>
+  				<div class="col-lg-2">
+  					<span>Last Name</span>
+  				</div>
+  				<div class="col-lg-2">
+  					:<span><%= user.lastname %></span>
+  				</div>
+  				<div class="col-lg-2">
+  					<span>Email:</span>
+  				</div>
+  				<div class="col-lg-2">
+  					:<span><%= user.email %></span>
+  				</div>
+  			</div>
+			</div>
+	<% end %>
+</div>

@@ -1,0 +1,19 @@
+development: &development
+  adapter: postgresql
+  encoding: unicode
+  database: domain
+  pool: 5
+  username: gritinnovation
+  password: gritinnovation
+  host: localhost
+
+
+
+production: 
+  adapter: postgresql
+  encoding: unicode
+  database: domain
+  pool: 5
+  username: gritinnovation
+  password: gritinnovation
+  host: /path/to/socket/file

@@ -1,0 +1,22 @@
+<!-- <h1>Editing Newdomain</h1>
+
+<%#= render 'form', newdomain: @newdomain %>
+
+<%#= link_to 'Show', @newdomain %> |
+<%#= link_to 'Back', newdomains_path %> -->
+
+<div class="row">
+	<div class="col-lg-6 col-lg-offset-3">
+		<div class="panel panel-default">
+    <div class="panel-heading">Edit Domain</div>
+    <div class="panel-body">
+    	<%= render 'form', newdomain: @newdomain %>
+    </div>
+     <div class="panel-footer">
+     	<%= link_to 'Show', @newdomain, class:"btn  btn-primary"%> |
+     	<%= link_to 'Back', newdomains_path, class:"btn  btn-primary" %>
+     </div>
+ </div>
+
+	</div>
+</div>
